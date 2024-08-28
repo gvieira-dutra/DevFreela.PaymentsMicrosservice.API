@@ -1,3 +1,4 @@
+using DevFreela.Payments.API.Consumers;
 using DevFreela.Payments.API.Service;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IPaymentService, PaymentService>();
 
+builder.Services.AddHostedService<ProccessPaymentConsumer>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
